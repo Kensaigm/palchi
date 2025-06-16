@@ -46,6 +46,10 @@ struct ContentView: View {
             await loadDashboardData()
         }
         .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                AdminMenuButton()
+            }
+
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button("Sync") {
                     Task {
@@ -67,7 +71,7 @@ struct ContentView: View {
 struct ActiveCommunicationsPanel: View {
     @State private var deviceConnections: [DeviceConnection] = []
     @State private var isScanning = false
-    
+
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             HStack {
@@ -76,9 +80,9 @@ struct ActiveCommunicationsPanel: View {
                 Text("Active Communications")
                     .font(.headline)
                     .fontWeight(.semibold)
-                
+
                 Spacer()
-                
+
                 Button(action: {
                     Task {
                         await scanForDevices()
@@ -90,9 +94,9 @@ struct ActiveCommunicationsPanel: View {
                         .animation(.linear(duration: 1).repeatForever(autoreverses: false), value: isScanning)
                 }
             }
-            
+
             Divider()
-            
+
             if deviceConnections.isEmpty {
                 VStack(spacing: 8) {
                     Image(systemName: "wifi.slash")
@@ -123,7 +127,7 @@ struct ActiveCommunicationsPanel: View {
             await loadDeviceConnections()
         }
     }
-    
+
     private func loadDeviceConnections() async {
         // Mock device connections
         deviceConnections = [
@@ -145,13 +149,30 @@ struct ActiveCommunicationsPanel: View {
             )
         ]
     }
-    
+
     private func scanForDevices() async {
         isScanning = true
         // Simulate scanning delay
         try? await Task.sleep(nanoseconds: 2_000_000_000)
         await loadDeviceConnections()
         isScanning = false
+    }
+}
+
+// MARK: - Admin Menu Button
+struct AdminMenuButton: View {
+    @State private var showingAdminView = false
+
+    var body: some View {
+        Button(action: {
+            showingAdminView = true
+        }) {
+            Image(systemName: "gearshape.fill")
+                .font(.title2)
+        }
+        .sheet(isPresented: $showingAdminView) {
+            AdminView()
+        }
     }
 }
 
