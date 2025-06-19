@@ -7,13 +7,13 @@ let package = Package(
         .iOS(.v13)
     ],
     dependencies: [
-        .package(url: "https://github.com/Alamofire/Alamofire.git", exact: "5.8.1")
+        // No external dependencies - using native iOS frameworks only
     ],
     targets: [
         .target(
             name: "PALCHI",
             dependencies: [
-                "Alamofire"
+                // No dependencies
             ],
             path: "PalChiApp"
         )

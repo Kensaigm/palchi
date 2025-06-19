@@ -9,11 +9,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: windowScene)
         
-        // Set up the initial view controller
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let initialViewController = storyboard.instantiateInitialViewController()
+        // Set up the initial view controller programmatically
+        let viewController = ViewController()
+        let navigationController = UINavigationController(rootViewController: viewController)
         
-        window?.rootViewController = initialViewController
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
 
@@ -35,5 +35,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func sceneDidEnterBackground(_ scene: UIScene) {
         // Called as the scene transitions from the foreground to the background.
+        // Save Core Data context if needed
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            appDelegate.coreDataStack.save()
+        }
     }
 }
