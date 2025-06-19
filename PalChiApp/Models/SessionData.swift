@@ -21,6 +21,18 @@ struct SessionData: Codable {
         self.size = Self.calculateSize(data: data)
     }
     
+    // Core Data compatible initializer
+    init(id: UUID, sessionId: String, userId: String?, data: [String: Any], timestamp: Date, synced: Bool, syncedAt: Date?, size: Int) {
+        self.id = id
+        self.sessionId = sessionId
+        self.userId = userId
+        self.data = data
+        self.timestamp = timestamp
+        self.synced = synced
+        self.syncedAt = syncedAt
+        self.size = size
+    }
+    
     private static func calculateSize(data: [String: Any]) -> Int {
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: data)
@@ -82,4 +94,43 @@ struct SyncResult {
 struct SyncError {
     let sessionId: String
     let error: String
+}
+
+// MARK: - Device Data Models
+
+struct DeviceData {
+    let id: UUID
+    let deviceId: String
+    let name: String
+    let type: DeviceType
+    let firmwareVersion: String?
+    let batteryLevel: Int?
+    let lastSeen: Date?
+    let isConnected: Bool
+    let signalStrength: Int?
+    
+    enum DeviceType: String, CaseIterable {
+        case palchiDevice = "PalChi Device"
+        case sensor = "Sensor"
+        case gateway = "Gateway"
+    }
+}
+
+struct LocationData {
+    let id: UUID
+    let latitude: Double
+    let longitude: Double
+    let altitude: Double?
+    let accuracy: Double?
+    let timestamp: Date
+    let locationName: String?
+}
+
+struct SyncLogData {
+    let id: UUID
+    let sessionId: String
+    let syncAttemptDate: Date
+    let successful: Bool
+    let errorMessage: String?
+    let retryCount: Int
 }

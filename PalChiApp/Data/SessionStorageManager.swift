@@ -1,219 +1,280 @@
 import Foundation
-import SQLite
+import CoreData
 
 class SessionStorageManager {
-    private var db: Connection?
-    private let sessions = Table("sessions")
+    private let coreDataStack = CoreDataStack.shared
     private let maxStorageSize: Int = 50 * 1024 * 1024 // 50MB
     
-    // Table columns
-    private let id = Expression<String>("id")
-    private let sessionId = Expression<String>("session_id")
-    private let userId = Expression<String?>("user_id")
-    private let jsonData = Expression<Data>("json_data")
-    private let timestamp = Expression<Date>("timestamp")
-    private let synced = Expression<Bool>("synced")
-    private let syncedAt = Expression<Date?>("synced_at")
-    private let size = Expression<Int>("size")
-    
     init() {
-        setupDatabase()
+        print("SessionStorageManager initialized with Core Data")
     }
     
-    private func setupDatabase() {
-        do {
-            let documentsPath = FileManager.default.urls(for: .documentDirectory,
-                                                       in: .userDomainMask).first!
-            let dbPath = documentsPath.appendingPathComponent("palchi_sessions.sqlite3")
-            
-            db = try Connection(dbPath.path)
-            createTable()
-            print("SessionStorageManager initialized at: \(dbPath.path)")
-        } catch {
-            print("Database setup failed: \(error)")
-        }
-    }
+    // MARK: - Session Management
     
-    private func createTable() {
-        do {
-            try db?.run(sessions.create(ifNotExists: true) { t in
-                t.column(id, primaryKey: true)
-                t.column(sessionId)
-                t.column(userId)
-                t.column(jsonData)
-                t.column(timestamp)
-                t.column(synced, defaultValue: false)
-                t.column(syncedAt)
-                t.column(size, defaultValue: 0)
-            })
-            
-            // Create indexes for better performance
-            try db?.run(sessions.createIndex(timestamp, ifNotExists: true))
-            try db?.run(sessions.createIndex(synced, ifNotExists: true))
-            try db?.run(sessions.createIndex(sessionId, ifNotExists: true))
-        } catch {
-            print("Create table failed: \(error)")
-        }
-    }
-    
-    func saveSession(_ sessionData: SessionData) async throws -> String {
-        try await checkStorageLimit()
+    func saveSession(_ sessionData: SessionData) -> Bool {
+        let context = coreDataStack.context
         
-        guard let db = db else {
-            throw StorageError.databaseNotInitialized
+        // Check storage capacity before saving
+        let stats = getStorageStats()
+        if stats.usagePercentage > 95.0 {
+            print("Storage nearly full, cleaning up old sessions")
+            coreDataStack.cleanupOldSessions()
         }
         
+        let session = Session(context: context)
+        session.id = sessionData.id
+        session.sessionId = sessionData.sessionId
+        session.userId = sessionData.userId
+        session.timestamp = sessionData.timestamp
+        session.synced = sessionData.synced
+        session.syncedAt = sessionData.syncedAt
+        session.size = Int32(sessionData.size)
+        
+        // Convert data dictionary to JSON Data
         do {
-            let jsonData = try JSONSerialization.data(withJSONObject: sessionData.data)
-            
-            let insert = sessions.insert(
-                id <- sessionData.id.uuidString,
-                sessionId <- sessionData.sessionId,
-                userId <- sessionData.userId,
-                self.jsonData <- jsonData,
-                timestamp <- sessionData.timestamp,
-                synced <- sessionData.synced,
-                syncedAt <- sessionData.syncedAt,
-                size <- sessionData.size
-            )
-            
-            try db.run(insert)
-            print("Session saved locally: \(sessionData.sessionId)")
-            return sessionData.id.uuidString
+            session.jsonData = try JSONSerialization.data(withJSONObject: sessionData.data)
         } catch {
-            print("Failed to save session: \(error)")
-            throw StorageError.saveFailed(error)
+            print("Error serializing session data: \(error)")
+            return false
+        }
+        
+        coreDataStack.save()
+        return true
+    }
+    
+    func getSession(by id: UUID) -> SessionData? {
+        let context = coreDataStack.context
+        let request: NSFetchRequest<Session> = Session.fetchRequest()
+        request.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+        request.fetchLimit = 1
+        
+        do {
+            let sessions = try context.fetch(request)
+            return sessions.first?.toSessionData()
+        } catch {
+            print("Error fetching session: \(error)")
+            return nil
         }
     }
     
-    func getUnsyncedSessions() async throws -> [SessionData] {
-        guard let db = db else {
-            throw StorageError.databaseNotInitialized
-        }
+    func getAllSessions() -> [SessionData] {
+        let context = coreDataStack.context
+        let request: NSFetchRequest<Session> = Session.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: false)]
         
         do {
-            let query = sessions.filter(synced == false).order(timestamp.asc)
-            var results: [SessionData] = []
-            
-            for row in try db.prepare(query) {
-                if let sessionData = try parseSessionData(from: row) {
-                    results.append(sessionData)
-                }
-            }
-            
-            return results
+            let sessions = try context.fetch(request)
+            return sessions.compactMap { $0.toSessionData() }
         } catch {
-            print("Failed to get unsynced sessions: \(error)")
-            throw StorageError.fetchFailed(error)
+            print("Error fetching all sessions: \(error)")
+            return []
         }
     }
     
-    func markAsSynced(_ sessionId: String) async throws {
-        guard let db = db else {
-            throw StorageError.databaseNotInitialized
-        }
+    func getRecentSessions(limit: Int = 10) -> [SessionData] {
+        let context = coreDataStack.context
+        let request: NSFetchRequest<Session> = Session.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: false)]
+        request.fetchLimit = limit
         
         do {
-            let session = sessions.filter(id == sessionId)
-            try db.run(session.update(
-                synced <- true,
-                syncedAt <- Date()
-            ))
+            let sessions = try context.fetch(request)
+            return sessions.compactMap { $0.toSessionData() }
         } catch {
-            print("Failed to mark session as synced: \(error)")
-            throw StorageError.updateFailed(error)
+            print("Error fetching recent sessions: \(error)")
+            return []
         }
     }
     
-    func deleteSession(_ sessionId: String) async throws {
-        guard let db = db else {
-            throw StorageError.databaseNotInitialized
-        }
+    func getUnsyncedSessions() -> [SessionData] {
+        let context = coreDataStack.context
+        let request: NSFetchRequest<Session> = Session.fetchRequest()
+        request.predicate = NSPredicate(format: "synced == NO")
+        request.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: true)]
         
         do {
-            let session = sessions.filter(id == sessionId)
-            try db.run(session.delete())
+            let sessions = try context.fetch(request)
+            return sessions.compactMap { $0.toSessionData() }
         } catch {
-            print("Failed to delete session: \(error)")
-            throw StorageError.deleteFailed(error)
+            print("Error fetching unsynced sessions: \(error)")
+            return []
         }
     }
     
-    private func checkStorageLimit() async throws {
-        guard let db = db else { return }
+    func markSessionAsSynced(_ sessionId: String) -> Bool {
+        let context = coreDataStack.context
+        let request: NSFetchRequest<Session> = Session.fetchRequest()
+        request.predicate = NSPredicate(format: "sessionId == %@", sessionId)
+        request.fetchLimit = 1
         
         do {
-            let totalSize = try db.scalar(sessions.select(size.sum)) ?? 0
-            
-            if totalSize > maxStorageSize {
-                // Remove oldest synced sessions
-                let oldSyncedSessions = sessions
-                    .filter(synced == true)
-                    .order(timestamp.asc)
-                
-                for row in try db.prepare(oldSyncedSessions) {
-                    try db.run(sessions.filter(id == row[id]).delete())
-                    
-                    let newTotalSize = try db.scalar(sessions.select(size.sum)) ?? 0
-                    if newTotalSize <= Int(Double(maxStorageSize) * 0.8) {
-                        break
-                    }
-                }
+            let sessions = try context.fetch(request)
+            if let session = sessions.first {
+                session.synced = true
+                session.syncedAt = Date()
+                coreDataStack.save()
+                return true
             }
         } catch {
-            print("Storage limit check failed: \(error)")
+            print("Error marking session as synced: \(error)")
+        }
+        return false
+    }
+    
+    func deleteSession(_ sessionId: String) -> Bool {
+        let context = coreDataStack.context
+        let request: NSFetchRequest<Session> = Session.fetchRequest()
+        request.predicate = NSPredicate(format: "sessionId == %@", sessionId)
+        
+        do {
+            let sessions = try context.fetch(request)
+            for session in sessions {
+                context.delete(session)
+            }
+            coreDataStack.save()
+            return true
+        } catch {
+            print("Error deleting session: \(error)")
+            return false
         }
     }
     
-    func getStorageStats() async throws -> StorageStats {
-        guard let db = db else {
-            throw StorageError.databaseNotInitialized
+    func deleteAllSessions() -> Bool {
+        let context = coreDataStack.context
+        let request: NSFetchRequest<NSFetchRequestResult> = Session.fetchRequest()
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: request)
+        
+        do {
+            try context.execute(deleteRequest)
+            coreDataStack.save()
+            return true
+        } catch {
+            print("Error deleting all sessions: \(error)")
+            return false
+        }
+    }
+    
+    // MARK: - Storage Statistics
+    
+    func getStorageStats() -> StorageStats {
+        return coreDataStack.getStorageStats()
+    }
+    
+    func getDatabaseSize() -> Int64 {
+        return coreDataStack.getDatabaseSize()
+    }
+    
+    // MARK: - Maintenance
+    
+    func performMaintenance() {
+        coreDataStack.cleanupOldSessions()
+    }
+    
+    func vacuum() {
+        // Core Data handles optimization automatically, but we can trigger cleanup
+        coreDataStack.cleanupOldSessions()
+    }
+    
+    // MARK: - Search and Filtering
+    
+    func searchSessions(query: String) -> [SessionData] {
+        let context = coreDataStack.context
+        let request: NSFetchRequest<Session> = Session.fetchRequest()
+        request.predicate = NSPredicate(format: "sessionId CONTAINS[cd] %@ OR userId CONTAINS[cd] %@", query, query)
+        request.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: false)]
+        
+        do {
+            let sessions = try context.fetch(request)
+            return sessions.compactMap { $0.toSessionData() }
+        } catch {
+            print("Error searching sessions: \(error)")
+            return []
+        }
+    }
+    
+    func getSessionsInDateRange(from startDate: Date, to endDate: Date) -> [SessionData] {
+        let context = coreDataStack.context
+        let request: NSFetchRequest<Session> = Session.fetchRequest()
+        request.predicate = NSPredicate(format: "timestamp >= %@ AND timestamp <= %@", startDate as NSDate, endDate as NSDate)
+        request.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: false)]
+        
+        do {
+            let sessions = try context.fetch(request)
+            return sessions.compactMap { $0.toSessionData() }
+        } catch {
+            print("Error fetching sessions in date range: \(error)")
+            return []
+        }
+    }
+    
+    func getSessionsByUser(_ userId: String) -> [SessionData] {
+        let context = coreDataStack.context
+        let request: NSFetchRequest<Session> = Session.fetchRequest()
+        request.predicate = NSPredicate(format: "userId == %@", userId)
+        request.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: false)]
+        
+        do {
+            let sessions = try context.fetch(request)
+            return sessions.compactMap { $0.toSessionData() }
+        } catch {
+            print("Error fetching sessions by user: \(error)")
+            return []
+        }
+    }
+}
+
+// MARK: - Session Core Data Extension
+
+extension Session {
+    func toSessionData() -> SessionData? {
+        guard let id = self.id,
+              let sessionId = self.sessionId,
+              let timestamp = self.timestamp,
+              let jsonData = self.jsonData else {
+            return nil
         }
         
         do {
-            let totalSessions = try db.scalar(sessions.count)
-            let unsyncedSessions = try db.scalar(sessions.filter(synced == false).count)
-            let totalSize = try db.scalar(sessions.select(size.sum)) ?? 0
+            let data = try JSONSerialization.jsonObject(with: jsonData) as? [String: Any] ?? [:]
             
-            return StorageStats(
-                totalSessions: totalSessions,
-                unsyncedSessions: unsyncedSessions,
-                totalSize: totalSize,
-                maxSize: maxStorageSize,
-                usagePercentage: Double(totalSize) / Double(maxStorageSize) * 100
-            )
-        } catch {
-            throw StorageError.fetchFailed(error)
-        }
-    }
-    
-    private func parseSessionData(from row: Row) throws -> SessionData? {
-        do {
-            let jsonData = row[self.jsonData]
-            let dataDict = try JSONSerialization.jsonObject(with: jsonData) as? [String: Any] ?? [:]
+            var sessionData = SessionData(sessionId: sessionId, userId: self.userId, data: data)
             
-            var sessionData = SessionData(
-                sessionId: row[sessionId],
-                userId: row[userId],
-                data: dataDict
-            )
-            
-            // Update with stored values
+            // Update the properties that can't be set in init
             let mirror = Mirror(reflecting: sessionData)
-            // Note: This is a simplified approach. In production, you'd want a more robust way to update the struct
+            if let idProperty = mirror.children.first(where: { $0.label == "id" }) {
+                // Use reflection or create a new initializer to set the id
+                // For now, we'll create a new SessionData with the correct values
+                return SessionData(
+                    id: id,
+                    sessionId: sessionId,
+                    userId: self.userId,
+                    data: data,
+                    timestamp: timestamp,
+                    synced: self.synced,
+                    syncedAt: self.syncedAt,
+                    size: Int(self.size)
+                )
+            }
             
             return sessionData
         } catch {
-            print("Failed to parse session data: \(error)")
+            print("Error deserializing session data: \(error)")
             return nil
         }
     }
 }
 
-enum StorageError: Error {
-    case databaseNotInitialized
-    case saveFailed(Error)
-    case fetchFailed(Error)
-    case updateFailed(Error)
-    case deleteFailed(Error)
+// MARK: - SessionData Extension for Core Data
+
+extension SessionData {
+    init(id: UUID, sessionId: String, userId: String?, data: [String: Any], timestamp: Date, synced: Bool, syncedAt: Date?, size: Int) {
+        self.id = id
+        self.sessionId = sessionId
+        self.userId = userId
+        self.data = data
+        self.timestamp = timestamp
+        self.synced = synced
+        self.syncedAt = syncedAt
+        self.size = size
+    }
 }
