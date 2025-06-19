@@ -4,8 +4,7 @@ import PackageDescription
 let package = Package(
     name: "PALCHI",
     platforms: [
-        .iOS(.v13),
-        .macOS(.v10_15)
+        .iOS(.v13)
     ],
     dependencies: [
         .package(url: "https://github.com/stephencelis/SQLite.swift.git", from: "0.14.1"),
