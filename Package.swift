@@ -17,7 +17,8 @@ let package = Package(
             dependencies: [
                 .product(name: "SQLite", package: "SQLite.swift"),
                 "Alamofire"
-            ]
+            ],
+            path: "PalChiApp"
         )
     ]
 )
