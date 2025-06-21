@@ -14,16 +14,15 @@ class NetworkManager {
         return URLSession(configuration: configuration)
     }()
     
-    // MARK: - Generic Request Method
+    // MARK: - Async/Await Methods
     
     func performRequest<T: Codable>(
         url: URL,
         method: HTTPMethod = .GET,
         headers: [String: String]? = nil,
         body: Data? = nil,
-        responseType: T.Type,
-        completion: @escaping (Result<T, NetworkError>) -> Void
-    ) {
+        responseType: T.Type
+    ) async throws -> T {
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
         request.httpBody = body
@@ -37,39 +36,114 @@ class NetworkManager {
             request.setValue(value, forHTTPHeaderField: key)
         }
         
-        urlSession.dataTask(with: request) { data, response, error in
-            DispatchQueue.main.async {
-                if let error = error {
-                    completion(.failure(.networkError(error)))
-                    return
-                }
-                
-                guard let httpResponse = response as? HTTPURLResponse else {
-                    completion(.failure(.invalidResponse))
-                    return
-                }
-                
-                guard 200...299 ~= httpResponse.statusCode else {
-                    completion(.failure(.httpError(httpResponse.statusCode)))
-                    return
-                }
-                
-                guard let data = data else {
-                    completion(.failure(.noData))
-                    return
-                }
-                
-                do {
-                    let decodedResponse = try JSONDecoder().decode(responseType, from: data)
-                    completion(.success(decodedResponse))
-                } catch {
-                    completion(.failure(.decodingError(error)))
-                }
-            }
-        }.resume()
+        let (data, response) = try await urlSession.data(for: request)
+        
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw NetworkError.invalidResponse
+        }
+        
+        guard 200...299 ~= httpResponse.statusCode else {
+            throw NetworkError.httpError(httpResponse.statusCode)
+        }
+        
+        do {
+            let decodedResponse = try JSONDecoder().decode(responseType, from: data)
+            return decodedResponse
+        } catch {
+            throw NetworkError.decodingError(error)
+        }
     }
     
-    // MARK: - Convenience Methods
+    // MARK: - Async Convenience Methods
+    
+    func get<T: Codable>(
+        url: URL,
+        headers: [String: String]? = nil,
+        responseType: T.Type
+    ) async throws -> T {
+        return try await performRequest(url: url, method: .GET, headers: headers, responseType: responseType)
+    }
+    
+    func post<T: Codable>(
+        url: URL,
+        headers: [String: String]? = nil,
+        body: Data? = nil,
+        responseType: T.Type
+    ) async throws -> T {
+        return try await performRequest(url: url, method: .POST, headers: headers, body: body, responseType: responseType)
+    }
+    
+    func put<T: Codable>(
+        url: URL,
+        headers: [String: String]? = nil,
+        body: Data? = nil,
+        responseType: T.Type
+    ) async throws -> T {
+        return try await performRequest(url: url, method: .PUT, headers: headers, body: body, responseType: responseType)
+    }
+    
+    func delete<T: Codable>(
+        url: URL,
+        headers: [String: String]? = nil,
+        responseType: T.Type
+    ) async throws -> T {
+        return try await performRequest(url: url, method: .DELETE, headers: headers, responseType: responseType)
+    }
+    
+    // MARK: - Upload Methods
+    
+    func uploadData(
+        url: URL,
+        data: Data,
+        headers: [String: String]? = nil
+    ) async throws -> Data {
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethod.POST.rawValue
+        
+        headers?.forEach { key, value in
+            request.setValue(value, forHTTPHeaderField: key)
+        }
+        
+        let (responseData, response) = try await urlSession.upload(for: request, from: data)
+        
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw NetworkError.invalidResponse
+        }
+        
+        guard 200...299 ~= httpResponse.statusCode else {
+            throw NetworkError.httpError(httpResponse.statusCode)
+        }
+        
+        return responseData
+    }
+    
+    // MARK: - Legacy Completion Handler Methods (for backward compatibility)
+    
+    func performRequest<T: Codable>(
+        url: URL,
+        method: HTTPMethod = .GET,
+        headers: [String: String]? = nil,
+        body: Data? = nil,
+        responseType: T.Type,
+        completion: @escaping (Result<T, NetworkError>) -> Void
+    ) {
+        Task {
+            do {
+                let result = try await performRequest(url: url, method: method, headers: headers, body: body, responseType: responseType)
+                await MainActor.run {
+                    completion(.success(result))
+                }
+            } catch let error as NetworkError {
+                await MainActor.run {
+                    completion(.failure(error))
+                }
+            } catch {
+                await MainActor.run {
+                    completion(.failure(.networkError(error)))
+                }
+            }
+        }
+    }
     
     func get<T: Codable>(
         url: URL,
@@ -109,41 +183,28 @@ class NetworkManager {
         performRequest(url: url, method: .DELETE, headers: headers, responseType: responseType, completion: completion)
     }
     
-    // MARK: - Upload Methods
-    
     func uploadData(
         url: URL,
         data: Data,
         headers: [String: String]? = nil,
         completion: @escaping (Result<Data, NetworkError>) -> Void
     ) {
-        var request = URLRequest(url: url)
-        request.httpMethod = HTTPMethod.POST.rawValue
-        
-        headers?.forEach { key, value in
-            request.setValue(value, forHTTPHeaderField: key)
-        }
-        
-        urlSession.uploadTask(with: request, from: data) { data, response, error in
-            DispatchQueue.main.async {
-                if let error = error {
+        Task {
+            do {
+                let result = try await uploadData(url: url, data: data, headers: headers)
+                await MainActor.run {
+                    completion(.success(result))
+                }
+            } catch let error as NetworkError {
+                await MainActor.run {
+                    completion(.failure(error))
+                }
+            } catch {
+                await MainActor.run {
                     completion(.failure(.networkError(error)))
-                    return
                 }
-                
-                guard let httpResponse = response as? HTTPURLResponse else {
-                    completion(.failure(.invalidResponse))
-                    return
-                }
-                
-                guard 200...299 ~= httpResponse.statusCode else {
-                    completion(.failure(.httpError(httpResponse.statusCode)))
-                    return
-                }
-                
-                completion(.success(data ?? Data()))
             }
-        }.resume()
+        }
     }
 }
 
