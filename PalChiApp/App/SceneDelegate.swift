@@ -36,8 +36,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidEnterBackground(_ scene: UIScene) {
         // Called as the scene transitions from the foreground to the background.
         // Save Core Data context if needed
-        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-            appDelegate.coreDataStack.save()
-        }
+        CoreDataStack.shared.save()
     }
 }

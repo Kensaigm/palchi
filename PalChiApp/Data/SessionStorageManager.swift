@@ -263,18 +263,3 @@ extension Session {
         }
     }
 }
-
-// MARK: - SessionData Extension for Core Data
-
-extension SessionData {
-    init(id: UUID, sessionId: String, userId: String?, data: [String: Any], timestamp: Date, synced: Bool, syncedAt: Date?, size: Int) {
-        self.id = id
-        self.sessionId = sessionId
-        self.userId = userId
-        self.data = data
-        self.timestamp = timestamp
-        self.synced = synced
-        self.syncedAt = syncedAt
-        self.size = size
-    }
-}
