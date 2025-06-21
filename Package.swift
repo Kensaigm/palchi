@@ -16,11 +16,13 @@ let package = Package(
                 // No dependencies
             ],
             path: "PalChiApp",
+            exclude: [
+                "Info.plist"
+            ],
             resources: [
                 .process("Resources/Assets.xcassets"),
                 .process("Resources/Colors.xcassets"),
-                .process("Data/PalChiDataModel.xcdatamodeld"),
-                .copy("App/Info.plist")
+                .process("Data/PalChiDataModel.xcdatamodeld")
             ]
         )
     ]
