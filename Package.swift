@@ -9,13 +9,14 @@ let package = Package(
     targets: [
         .target(
             name: "PALCHI",
+            dependencies: [],
             path: "PalChiApp",
+            exclude: ["Info.plist"],
             resources: [
                 .process("Resources/Assets.xcassets"),
                 .process("Resources/Colors.xcassets"),
                 .process("Data/PalChiDataModel.xcdatamodeld")
-            ],
-            exclude: ["Info.plist"]
+            ]
         )
     ]
 )
