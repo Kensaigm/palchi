@@ -1,0 +1,6 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test -project PalChiApp.xcodeproj -scheme PalChiApp -destination "platform=iOS Simulator,name=iPhone 14,OS=latest" "-only-testing:PalChiAppTests/AdminSheetsTests"
+
+2025-06-21 23:21:28.851 xcodebuild[57245:5722632] Writing error result bundle to /var/folders/zw/8zg0ln3534xd_tyvm9cv09wr0000gp/T/ResultBundle_2025-21-06_23-21-0028.xcresult
+xcodebuild: error: Scheme PalChiApp is not currently configured for the test action.
+

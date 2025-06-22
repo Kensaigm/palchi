@@ -1,0 +1,544 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project PalChiApp.xcodeproj -scheme PalChiApp -configuration Debug -sdk iphonesimulator -arch x86_64 build-for-testing
+
+Build settings from command line:
+    ARCHS = x86_64
+    SDKROOT = iphonesimulator18.5
+
+--- xcodebuild: WARNING: Using the first of multiple matching destinations:
+{ platform:iOS Simulator, id:dvtdevice-DVTiOSDeviceSimulatorPlaceholder-iphonesimulator:placeholder, name:Any iOS Simulator Device }
+{ platform:iOS Simulator, arch:x86_64, id:CA04D598-AC23-4001-91C8-3AA7F03121E1, OS:17.4, name:iPad (10th generation) }
+{ platform:iOS Simulator, arch:x86_64, id:C8F70354-DC26-43DB-B36F-556CA6C5D1C0, OS:18.3.1, name:iPad (10th generation) }
+{ platform:iOS Simulator, arch:x86_64, id:D36495DB-B39A-4874-B030-D04DD3C2B800, OS:18.3.1, name:iPad (A16) }
+{ platform:iOS Simulator, arch:x86_64, id:1ECBF2A9-CECD-4E40-BE4C-E1428F6F3A4E, OS:18.5, name:iPad (A16) }
+{ platform:iOS Simulator, arch:x86_64, id:9B2CF6D8-E5A2-4E53-AE6A-E2684C3B79BA, OS:17.4, name:iPad Air (5th generation) }
+{ platform:iOS Simulator, arch:x86_64, id:DDCEF738-5723-4CF9-9338-9E951E4509FC, OS:17.4, name:iPad Air 11-inch (M2) }
+{ platform:iOS Simulator, arch:x86_64, id:D551200D-02A2-48E0-AC7A-DB0DDD70AF48, OS:18.3.1, name:iPad Air 11-inch (M2) }
+{ platform:iOS Simulator, arch:x86_64, id:579C5EB2-D13E-407D-9616-D08F168A19C5, OS:18.3.1, name:iPad Air 11-inch (M3) }
+{ platform:iOS Simulator, arch:x86_64, id:EBC2CD32-7449-4D43-84B4-47742ACE847B, OS:18.5, name:iPad Air 11-inch (M3) }
+{ platform:iOS Simulator, arch:x86_64, id:0703E55A-C091-4C32-9EEB-BB3E268C2FC4, OS:17.4, name:iPad Air 13-inch (M2) }
+{ platform:iOS Simulator, arch:x86_64, id:F49DB06A-2332-451E-B1A1-BD7CF7B18CCE, OS:18.3.1, name:iPad Air 13-inch (M2) }
+{ platform:iOS Simulator, arch:x86_64, id:180E93C8-9167-4213-88CD-E3674BB600E8, OS:18.3.1, name:iPad Air 13-inch (M3) }
+{ platform:iOS Simulator, arch:x86_64, id:75198D91-DB60-410C-BF85-92700716423E, OS:18.5, name:iPad Air 13-inch (M3) }
+{ platform:iOS Simulator, arch:x86_64, id:FF08EC3D-A165-4ADB-B690-F32C43272BBD, OS:17.4, name:iPad Pro (11-inch) (4th generation) }
+{ platform:iOS Simulator, arch:x86_64, id:ABE4689E-0906-42DE-9F8E-8C2399CEE90A, OS:17.4, name:iPad Pro (12.9-inch) (6th generation) }
+{ platform:iOS Simulator, arch:x86_64, id:3547AF0F-2DED-42A5-A136-B6B744675646, OS:17.4, name:iPad Pro 11-inch (M4) }
+{ platform:iOS Simulator, arch:x86_64, id:2C4C95F7-C534-4A46-AC03-71AF8C524E66, OS:18.3.1, name:iPad Pro 11-inch (M4) }
+{ platform:iOS Simulator, arch:x86_64, id:6A8E2458-873D-438B-BBE5-6B4E65AE860F, OS:18.5, name:iPad Pro 11-inch (M4) }
+{ platform:iOS Simulator, arch:x86_64, id:7C9B5A82-52C3-4AFC-850D-6F019D91BF7A, OS:17.4, name:iPad Pro 13-inch (M4) }
+{ platform:iOS Simulator, arch:x86_64, id:DE12DE70-F9E6-426B-A089-92807918E658, OS:18.3.1, name:iPad Pro 13-inch (M4) }
+{ platform:iOS Simulator, arch:x86_64, id:9FF4587C-4D8B-44BF-90DC-D3B364773F94, OS:18.5, name:iPad Pro 13-inch (M4) }
+{ platform:iOS Simulator, arch:x86_64, id:9139BB28-52F4-4A07-AED8-0717AB1697A9, OS:17.4, name:iPad mini (6th generation) }
+{ platform:iOS Simulator, arch:x86_64, id:CF22BA0B-07E5-43FE-89E0-027CCB1A4D65, OS:18.3.1, name:iPad mini (A17 Pro) }
+{ platform:iOS Simulator, arch:x86_64, id:50C8130D-7CF8-472A-A0DB-D74C966F3CFB, OS:18.5, name:iPad mini (A17 Pro) }
+{ platform:iOS Simulator, arch:x86_64, id:772EF79C-6D6E-4E4F-A3CB-CCA8804C7D3A, OS:17.4, name:iPhone 15 }
+{ platform:iOS Simulator, arch:x86_64, id:E1776F27-FDC2-41F2-80FF-75A0DA1A1A37, OS:17.4, name:iPhone 15 Plus }
+{ platform:iOS Simulator, arch:x86_64, id:11A1D9AC-61DD-42F2-80EA-F00872E7FE02, OS:17.4, name:iPhone 15 Pro }
+{ platform:iOS Simulator, arch:x86_64, id:AD17F2D7-A089-4735-830A-D843ABDFAA46, OS:17.4, name:iPhone 15 Pro Max }
+{ platform:iOS Simulator, arch:x86_64, id:9F8CE50E-157F-4EC0-B344-43DA61A7B456, OS:18.3.1, name:iPhone 16 }
+{ platform:iOS Simulator, arch:x86_64, id:31626FF8-14DD-46A2-A1B3-59E951EC0CFC, OS:18.5, name:iPhone 16 }
+{ platform:iOS Simulator, arch:x86_64, id:093503D0-9884-44FF-A8E5-4FD75C965820, OS:18.3.1, name:iPhone 16 Plus }
+{ platform:iOS Simulator, arch:x86_64, id:FC28A447-3DF4-49AC-8E51-F279D1ACDCB5, OS:18.5, name:iPhone 16 Plus }
+{ platform:iOS Simulator, arch:x86_64, id:81EAD31F-EF9A-4F5C-A647-DE46C526AAC8, OS:18.3.1, name:iPhone 16 Pro }
+{ platform:iOS Simulator, arch:x86_64, id:D288245A-4245-4CBE-AF7C-458BD74BDE82, OS:18.5, name:iPhone 16 Pro }
+{ platform:iOS Simulator, arch:x86_64, id:99999A8F-B65E-4FB5-89AD-A6A33F306E01, OS:18.3.1, name:iPhone 16 Pro Max }
+{ platform:iOS Simulator, arch:x86_64, id:2E43F21A-C388-4895-866D-A62B37B12479, OS:18.5, name:iPhone 16 Pro Max }
+{ platform:iOS Simulator, arch:x86_64, id:E6BD2D31-69E2-47FF-B8F6-D31A2CCB4680, OS:18.3.1, name:iPhone 16e }
+{ platform:iOS Simulator, arch:x86_64, id:DADC16C7-4A26-4317-B15B-EFFFB92D87A8, OS:18.5, name:iPhone 16e }
+{ platform:iOS Simulator, arch:x86_64, id:D21387C7-9682-4BD8-87DB-AACD95E7EB20, OS:17.4, name:iPhone SE (3rd generation) }
+{ platform:iOS Simulator, arch:x86_64, id:9B0B761E-EB33-4F5B-ADEA-4BBA3AF91837, OS:18.3.1, name:iPhone SE (3rd generation) }
+{ platform:iOS Simulator, arch:arm64, id:CA04D598-AC23-4001-91C8-3AA7F03121E1, OS:17.4, name:iPad (10th generation) }
+{ platform:iOS Simulator, arch:arm64, id:C8F70354-DC26-43DB-B36F-556CA6C5D1C0, OS:18.3.1, name:iPad (10th generation) }
+{ platform:iOS Simulator, arch:arm64, id:D36495DB-B39A-4874-B030-D04DD3C2B800, OS:18.3.1, name:iPad (A16) }
+{ platform:iOS Simulator, arch:arm64, id:1ECBF2A9-CECD-4E40-BE4C-E1428F6F3A4E, OS:18.5, name:iPad (A16) }
+{ platform:iOS Simulator, arch:arm64, id:9B2CF6D8-E5A2-4E53-AE6A-E2684C3B79BA, OS:17.4, name:iPad Air (5th generation) }
+{ platform:iOS Simulator, arch:arm64, id:DDCEF738-5723-4CF9-9338-9E951E4509FC, OS:17.4, name:iPad Air 11-inch (M2) }
+{ platform:iOS Simulator, arch:arm64, id:D551200D-02A2-48E0-AC7A-DB0DDD70AF48, OS:18.3.1, name:iPad Air 11-inch (M2) }
+{ platform:iOS Simulator, arch:arm64, id:579C5EB2-D13E-407D-9616-D08F168A19C5, OS:18.3.1, name:iPad Air 11-inch (M3) }
+{ platform:iOS Simulator, arch:arm64, id:EBC2CD32-7449-4D43-84B4-47742ACE847B, OS:18.5, name:iPad Air 11-inch (M3) }
+{ platform:iOS Simulator, arch:arm64, id:0703E55A-C091-4C32-9EEB-BB3E268C2FC4, OS:17.4, name:iPad Air 13-inch (M2) }
+{ platform:iOS Simulator, arch:arm64, id:F49DB06A-2332-451E-B1A1-BD7CF7B18CCE, OS:18.3.1, name:iPad Air 13-inch (M2) }
+{ platform:iOS Simulator, arch:arm64, id:180E93C8-9167-4213-88CD-E3674BB600E8, OS:18.3.1, name:iPad Air 13-inch (M3) }
+{ platform:iOS Simulator, arch:arm64, id:75198D91-DB60-410C-BF85-92700716423E, OS:18.5, name:iPad Air 13-inch (M3) }
+{ platform:iOS Simulator, arch:arm64, id:FF08EC3D-A165-4ADB-B690-F32C43272BBD, OS:17.4, name:iPad Pro (11-inch) (4th generation) }
+{ platform:iOS Simulator, arch:arm64, id:ABE4689E-0906-42DE-9F8E-8C2399CEE90A, OS:17.4, name:iPad Pro (12.9-inch) (6th generation) }
+{ platform:iOS Simulator, arch:arm64, id:3547AF0F-2DED-42A5-A136-B6B744675646, OS:17.4, name:iPad Pro 11-inch (M4) }
+{ platform:iOS Simulator, arch:arm64, id:2C4C95F7-C534-4A46-AC03-71AF8C524E66, OS:18.3.1, name:iPad Pro 11-inch (M4) }
+{ platform:iOS Simulator, arch:arm64, id:6A8E2458-873D-438B-BBE5-6B4E65AE860F, OS:18.5, name:iPad Pro 11-inch (M4) }
+{ platform:iOS Simulator, arch:arm64, id:7C9B5A82-52C3-4AFC-850D-6F019D91BF7A, OS:17.4, name:iPad Pro 13-inch (M4) }
+{ platform:iOS Simulator, arch:arm64, id:DE12DE70-F9E6-426B-A089-92807918E658, OS:18.3.1, name:iPad Pro 13-inch (M4) }
+{ platform:iOS Simulator, arch:arm64, id:9FF4587C-4D8B-44BF-90DC-D3B364773F94, OS:18.5, name:iPad Pro 13-inch (M4) }
+{ platform:iOS Simulator, arch:arm64, id:9139BB28-52F4-4A07-AED8-0717AB1697A9, OS:17.4, name:iPad mini (6th generation) }
+{ platform:iOS Simulator, arch:arm64, id:CF22BA0B-07E5-43FE-89E0-027CCB1A4D65, OS:18.3.1, name:iPad mini (A17 Pro) }
+{ platform:iOS Simulator, arch:arm64, id:50C8130D-7CF8-472A-A0DB-D74C966F3CFB, OS:18.5, name:iPad mini (A17 Pro) }
+{ platform:iOS Simulator, arch:arm64, id:772EF79C-6D6E-4E4F-A3CB-CCA8804C7D3A, OS:17.4, name:iPhone 15 }
+{ platform:iOS Simulator, arch:arm64, id:E1776F27-FDC2-41F2-80FF-75A0DA1A1A37, OS:17.4, name:iPhone 15 Plus }
+{ platform:iOS Simulator, arch:arm64, id:11A1D9AC-61DD-42F2-80EA-F00872E7FE02, OS:17.4, name:iPhone 15 Pro }
+{ platform:iOS Simulator, arch:arm64, id:AD17F2D7-A089-4735-830A-D843ABDFAA46, OS:17.4, name:iPhone 15 Pro Max }
+{ platform:iOS Simulator, arch:arm64, id:9F8CE50E-157F-4EC0-B344-43DA61A7B456, OS:18.3.1, name:iPhone 16 }
+{ platform:iOS Simulator, arch:arm64, id:31626FF8-14DD-46A2-A1B3-59E951EC0CFC, OS:18.5, name:iPhone 16 }
+{ platform:iOS Simulator, arch:arm64, id:093503D0-9884-44FF-A8E5-4FD75C965820, OS:18.3.1, name:iPhone 16 Plus }
+{ platform:iOS Simulator, arch:arm64, id:FC28A447-3DF4-49AC-8E51-F279D1ACDCB5, OS:18.5, name:iPhone 16 Plus }
+{ platform:iOS Simulator, arch:arm64, id:81EAD31F-EF9A-4F5C-A647-DE46C526AAC8, OS:18.3.1, name:iPhone 16 Pro }
+{ platform:iOS Simulator, arch:arm64, id:D288245A-4245-4CBE-AF7C-458BD74BDE82, OS:18.5, name:iPhone 16 Pro }
+{ platform:iOS Simulator, arch:arm64, id:99999A8F-B65E-4FB5-89AD-A6A33F306E01, OS:18.3.1, name:iPhone 16 Pro Max }
+{ platform:iOS Simulator, arch:arm64, id:2E43F21A-C388-4895-866D-A62B37B12479, OS:18.5, name:iPhone 16 Pro Max }
+{ platform:iOS Simulator, arch:arm64, id:E6BD2D31-69E2-47FF-B8F6-D31A2CCB4680, OS:18.3.1, name:iPhone 16e }
+{ platform:iOS Simulator, arch:arm64, id:DADC16C7-4A26-4317-B15B-EFFFB92D87A8, OS:18.5, name:iPhone 16e }
+{ platform:iOS Simulator, arch:arm64, id:D21387C7-9682-4BD8-87DB-AACD95E7EB20, OS:17.4, name:iPhone SE (3rd generation) }
+{ platform:iOS Simulator, arch:arm64, id:9B0B761E-EB33-4F5B-ADEA-4BBA3AF91837, OS:18.3.1, name:iPhone SE (3rd generation) }
+{ platform:macOS, arch:arm64, variant:Designed for [iPad,iPhone], id:00008103-000160AE3C31001E, name:My Mac }
+{ platform:iOS, id:dvtdevice-DVTiPhonePlaceholder-iphoneos:placeholder, name:Any iOS Device }
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (1 target)
+    Target 'PalChiApp' in project 'PalChiApp' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/momc --dry-run --action generate --swift-version 5.0 --sdkroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk --iphonesimulator-deployment-target 15.0 --module PalChiApp /Users/scottc/Documents/Development/PalChi/PalChiApp/Data/PalChiDataModel.xcdatamodeld /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources/CoreDataGenerated/PalChiDataModel
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --print-asset-tag-combinations --output-format xml1 /Users/scottc/Documents/Development/PalChi/PalChiApp/Resources/Assets.xcassets /Users/scottc/Documents/Development/PalChi/PalChiApp/Resources/Colors.xcassets
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --version --output-format xml1
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: 6c4ea047a34428e435d01d17e2f22aa8
+Build description path: /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/XCBuildData/6c4ea047a34428e435d01d17e2f22aa8.xcbuilddata
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk /Users/scottc/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator18.5-22F76-d5fc8ad4295d2ef488fb7d0f804ce0c4.sdkstatcache
+    cd /Users/scottc/Documents/Development/PalChi/PalChiApp.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk -o /Users/scottc/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator18.5-22F76-d5fc8ad4295d2ef488fb7d0f804ce0c4.sdkstatcache
+
+CreateBuildDirectory /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products
+    cd /Users/scottc/Documents/Development/PalChi/PalChiApp.xcodeproj
+    builtin-create-build-directory /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products
+
+CreateBuildDirectory /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex
+    cd /Users/scottc/Documents/Development/PalChi/PalChiApp.xcodeproj
+    builtin-create-build-directory /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex
+
+CreateBuildDirectory /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator
+    cd /Users/scottc/Documents/Development/PalChi/PalChiApp.xcodeproj
+    builtin-create-build-directory /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator
+
+WriteAuxiliaryFile /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp-e44d905948e6d4833c7c1cb5ef7b462d-VFS-iphonesimulator/all-product-headers.yaml
+    cd /Users/scottc/Documents/Development/PalChi/PalChiApp.xcodeproj
+    write-file /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp-e44d905948e6d4833c7c1cb5ef7b462d-VFS-iphonesimulator/all-product-headers.yaml
+
+CreateBuildDirectory /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator
+    cd /Users/scottc/Documents/Development/PalChi/PalChiApp.xcodeproj
+    builtin-create-build-directory /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator
+
+WriteAuxiliaryFile /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp-own-target-headers.hmap (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    write-file /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp-own-target-headers.hmap
+
+WriteAuxiliaryFile /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp-generated-files.hmap (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    write-file /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp-generated-files.hmap
+
+WriteAuxiliaryFile /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp.hmap (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    write-file /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp.hmap
+
+WriteAuxiliaryFile /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp-project-headers.hmap (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    write-file /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp-project-headers.hmap
+
+WriteAuxiliaryFile /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp-all-target-headers.hmap (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    write-file /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp-all-target-headers.hmap
+
+WriteAuxiliaryFile /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp.DependencyStaticMetadataFileList (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    write-file /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp.DependencyMetadataFileList (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    write-file /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp.DependencyMetadataFileList
+
+WriteAuxiliaryFile /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp-all-non-framework-target-headers.hmap (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    write-file /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp-all-non-framework-target-headers.hmap
+
+WriteAuxiliaryFile /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp-DebugDylibPath-normal-x86_64.txt (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    write-file /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp-DebugDylibPath-normal-x86_64.txt
+
+WriteAuxiliaryFile /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp-DebugDylibInstallName-normal-x86_64.txt (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    write-file /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp-DebugDylibInstallName-normal-x86_64.txt
+
+WriteAuxiliaryFile /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp_const_extract_protocols.json (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    write-file /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp_const_extract_protocols.json
+
+WriteAuxiliaryFile /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp.SwiftFileList (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    write-file /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp.SwiftFileList
+
+WriteAuxiliaryFile /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp.SwiftConstValuesFileList (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    write-file /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp.SwiftConstValuesFileList
+
+WriteAuxiliaryFile /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp.LinkFileList (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    write-file /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp.LinkFileList
+
+WriteAuxiliaryFile /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp-OutputFileMap.json (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    write-file /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp-OutputFileMap.json
+
+MkDir /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    /bin/mkdir -p /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app
+
+WriteAuxiliaryFile /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources/Entitlements-Simulated.plist (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    write-file /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources/Entitlements-Simulated.plist
+
+ProcessProductPackaging "" /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp.app-Simulated.xcent (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    
+    Entitlements:
+    
+    {
+    "application-identifier" = "FAKETEAMID.com.palchi.app";
+}
+    
+    builtin-productPackagingUtility -entitlements -format xml -o /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp.app-Simulated.xcent
+
+ProcessProductPackagingDER /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp.app-Simulated.xcent /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp.app-Simulated.xcent.der (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    /usr/bin/derq query -f xml -i /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp.app-Simulated.xcent -o /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp.app-Simulated.xcent.der --raw
+
+Ld /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app/__preview.dylib normal (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target x86_64-apple-ios15.0-simulator -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk -O0 -L/Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator -F/Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator -install_name @rpath/PalChiApp.debug.dylib -dead_strip -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -dependency_info -Xlinker /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp_dependency_info.dat -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __entitlements -Xlinker /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp.app-Simulated.xcent -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __ents_der -Xlinker /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp.app-Simulated.xcent.der -Xlinker -no_adhoc_codesign -o /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app/__preview.dylib
+
+GenerateAssetSymbols /Users/scottc/Documents/Development/PalChi/PalChiApp/Resources/Assets.xcassets /Users/scottc/Documents/Development/PalChi/PalChiApp/Resources/Colors.xcassets (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    /Applications/Xcode.app/Contents/Developer/usr/bin/actool /Users/scottc/Documents/Development/PalChi/PalChiApp/Resources/Assets.xcassets /Users/scottc/Documents/Development/PalChi/PalChiApp/Resources/Colors.xcassets --compile /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app --output-format human-readable-text --notices --warnings --export-dependency-info /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/assetcatalog_dependencies --output-partial-info-plist /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/assetcatalog_generated_info.plist --app-icon AppIcon --accent-color AccentColor --compress-pngs --enable-on-demand-resources YES --development-region en --target-device iphone --target-device ipad --minimum-deployment-target 15.0 --platform iphonesimulator --bundle-identifier com.palchi.app --generate-swift-asset-symbols /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources/GeneratedAssetSymbols.swift --generate-objc-asset-symbols /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources/GeneratedAssetSymbols.h --generate-asset-symbol-index /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources/GeneratedAssetSymbols-Index.plist
+/* com.apple.actool.compilation-results */
+/Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources/GeneratedAssetSymbols-Index.plist
+/Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources/GeneratedAssetSymbols.h
+/Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources/GeneratedAssetSymbols.swift
+
+
+DataModelCompile /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app/ /Users/scottc/Documents/Development/PalChi/PalChiApp/Data/PalChiDataModel.xcdatamodeld (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    /Applications/Xcode.app/Contents/Developer/usr/bin/momc --sdkroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk --iphonesimulator-deployment-target 15.0 --module PalChiApp /Users/scottc/Documents/Development/PalChi/PalChiApp/Data/PalChiDataModel.xcdatamodeld /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app/
+PalChiDataModel.xcdatamodel: note: Model PalChiDataModel version checksum: nCrKcQCQdRGtSPCI2Tv6DmUT5yhzdLrYgXk0wrYQGWk=
+
+MkDir /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/assetcatalog_output/thinned (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    /bin/mkdir -p /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/assetcatalog_output/thinned
+
+MkDir /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/assetcatalog_output/unthinned (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    /bin/mkdir -p /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/assetcatalog_output/unthinned
+
+DataModelCodegen /Users/scottc/Documents/Development/PalChi/PalChiApp/Data/PalChiDataModel.xcdatamodeld (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    /Applications/Xcode.app/Contents/Developer/usr/bin/momc --action generate --swift-version 5.0 --sdkroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk --iphonesimulator-deployment-target 15.0 --module PalChiApp /Users/scottc/Documents/Development/PalChi/PalChiApp/Data/PalChiDataModel.xcdatamodeld /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources/CoreDataGenerated/PalChiDataModel
+
+CompileAssetCatalogVariant thinned /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app /Users/scottc/Documents/Development/PalChi/PalChiApp/Resources/Assets.xcassets /Users/scottc/Documents/Development/PalChi/PalChiApp/Resources/Colors.xcassets (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    /Applications/Xcode.app/Contents/Developer/usr/bin/actool /Users/scottc/Documents/Development/PalChi/PalChiApp/Resources/Assets.xcassets /Users/scottc/Documents/Development/PalChi/PalChiApp/Resources/Colors.xcassets --compile /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/assetcatalog_output/thinned --output-format human-readable-text --notices --warnings --export-dependency-info /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/assetcatalog_dependencies_thinned --output-partial-info-plist /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/assetcatalog_generated_info.plist_thinned --app-icon AppIcon --accent-color AccentColor --compress-pngs --enable-on-demand-resources YES --development-region en --target-device iphone --target-device ipad --minimum-deployment-target 15.0 --platform iphonesimulator
+/* com.apple.actool.notices */
+warning: Accent color ‘AccentColor’ is not present in any asset catalogs.
+/* com.apple.actool.compilation-results */
+/Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/assetcatalog_generated_info.plist_thinned
+
+
+SwiftDriver PalChiApp normal x86_64 com.apple.xcode.tools.swift.compiler (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name PalChiApp -Onone -enforce-exclusivity\=checked @/Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk -target x86_64-apple-ios15.0-simulator -g -module-cache-path /Users/scottc/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Index.noindex/DataStore -swift-version 5 -I /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator -F /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator -emit-localized-strings -emit-localized-strings-path /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64 -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/scottc/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator18.5-22F76-d5fc8ad4295d2ef488fb7d0f804ce0c4.sdkstatcache -output-file-map /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/scottc/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp_const_extract_protocols.json -Xcc -iquote -Xcc /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp-generated-files.hmap -Xcc -I/Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp-own-target-headers.hmap -Xcc -I/Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp-all-target-headers.hmap -Xcc -iquote -Xcc /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp-project-headers.hmap -Xcc -I/Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources-normal/x86_64 -Xcc -I/Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources/x86_64 -Xcc -I/Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp-Swift.h -working-directory /Users/scottc/Documents/Development/PalChi -experimental-emit-module-separately -disable-cmo
+
+SwiftCompile normal x86_64 Compiling\ Location+CoreDataClass.swift,\ Location+CoreDataProperties.swift /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources/CoreDataGenerated/PalChiDataModel/Location+CoreDataClass.swift /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources/CoreDataGenerated/PalChiDataModel/Location+CoreDataProperties.swift (in target 'PalChiApp' from project 'PalChiApp')
+SwiftCompile normal x86_64 /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources/CoreDataGenerated/PalChiDataModel/Location+CoreDataClass.swift (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    
+
+SwiftCompile normal x86_64 /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources/CoreDataGenerated/PalChiDataModel/Location+CoreDataProperties.swift (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    
+
+SwiftEmitModule normal x86_64 Emitting\ module\ for\ PalChiApp (in target 'PalChiApp' from project 'PalChiApp')
+
+EmitSwiftModule normal x86_64 (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    
+
+SwiftCompile normal x86_64 Compiling\ SyncLog+CoreDataClass.swift,\ SyncLog+CoreDataProperties.swift /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources/CoreDataGenerated/PalChiDataModel/SyncLog+CoreDataClass.swift /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources/CoreDataGenerated/PalChiDataModel/SyncLog+CoreDataProperties.swift (in target 'PalChiApp' from project 'PalChiApp')
+
+SwiftCompile normal x86_64 /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources/CoreDataGenerated/PalChiDataModel/SyncLog+CoreDataClass.swift (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    
+
+SwiftCompile normal x86_64 /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources/CoreDataGenerated/PalChiDataModel/SyncLog+CoreDataProperties.swift (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    
+
+SwiftCompile normal x86_64 Compiling\ PalChiDataModel+CoreDataModel.swift,\ GeneratedAssetSymbols.swift /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources/CoreDataGenerated/PalChiDataModel/PalChiDataModel+CoreDataModel.swift /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'PalChiApp' from project 'PalChiApp')
+SwiftCompile normal x86_64 /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources/CoreDataGenerated/PalChiDataModel/PalChiDataModel+CoreDataModel.swift (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    
+
+SwiftCompile normal x86_64 /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    
+
+SwiftCompile normal x86_64 Compiling\ AppDelegate.swift,\ SceneDelegate.swift,\ ViewController.swift /Users/scottc/Documents/Development/PalChi/PalChiApp/App/AppDelegate.swift /Users/scottc/Documents/Development/PalChi/PalChiApp/App/SceneDelegate.swift /Users/scottc/Documents/Development/PalChi/PalChiApp/Controllers/ViewController.swift (in target 'PalChiApp' from project 'PalChiApp')
+
+SwiftCompile normal x86_64 /Users/scottc/Documents/Development/PalChi/PalChiApp/App/AppDelegate.swift (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    
+
+SwiftCompile normal x86_64 /Users/scottc/Documents/Development/PalChi/PalChiApp/App/SceneDelegate.swift (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    
+
+SwiftCompile normal x86_64 /Users/scottc/Documents/Development/PalChi/PalChiApp/Controllers/ViewController.swift (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    
+
+SwiftCompile normal x86_64 Compiling\ Device+CoreDataClass.swift,\ Device+CoreDataProperties.swift /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources/CoreDataGenerated/PalChiDataModel/Device+CoreDataClass.swift /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources/CoreDataGenerated/PalChiDataModel/Device+CoreDataProperties.swift (in target 'PalChiApp' from project 'PalChiApp')
+
+SwiftCompile normal x86_64 /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources/CoreDataGenerated/PalChiDataModel/Device+CoreDataClass.swift (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    
+
+SwiftCompile normal x86_64 /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources/CoreDataGenerated/PalChiDataModel/Device+CoreDataProperties.swift (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    
+
+SwiftCompile normal x86_64 Compiling\ SessionData.swift,\ NetworkManager.swift /Users/scottc/Documents/Development/PalChi/PalChiApp/Models/SessionData.swift /Users/scottc/Documents/Development/PalChi/PalChiApp/Networking/NetworkManager.swift (in target 'PalChiApp' from project 'PalChiApp')
+
+SwiftCompile normal x86_64 /Users/scottc/Documents/Development/PalChi/PalChiApp/Models/SessionData.swift (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    
+
+SwiftCompile normal x86_64 /Users/scottc/Documents/Development/PalChi/PalChiApp/Networking/NetworkManager.swift (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    
+
+SwiftCompile normal x86_64 Compiling\ CoreDataStack.swift,\ DeviceManager.swift,\ SessionStorageManager.swift /Users/scottc/Documents/Development/PalChi/PalChiApp/Data/CoreDataStack.swift /Users/scottc/Documents/Development/PalChi/PalChiApp/Data/DeviceManager.swift /Users/scottc/Documents/Development/PalChi/PalChiApp/Data/SessionStorageManager.swift (in target 'PalChiApp' from project 'PalChiApp')
+
+SwiftCompile normal x86_64 /Users/scottc/Documents/Development/PalChi/PalChiApp/Data/CoreDataStack.swift (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    
+/Users/scottc/Documents/Development/PalChi/PalChiApp/Data/SessionStorageManager.swift:108:30: warning: capture of 'self' with non-sendable type 'SessionStorageManager' in a '@Sendable' closure
+                let result = self.getUnsyncedSessions()
+                             ^
+/Users/scottc/Documents/Development/PalChi/PalChiApp/Data/SessionStorageManager.swift:4:7: note: class 'SessionStorageManager' does not conform to the 'Sendable' protocol
+class SessionStorageManager {
+      ^
+/Users/scottc/Documents/Development/PalChi/PalChiApp/Data/SessionStorageManager.swift:138:31: warning: capture of 'self' with non-sendable type 'SessionStorageManager' in a '@Sendable' closure
+                let success = self.markSessionAsSynced(sessionId)
+                              ^
+/Users/scottc/Documents/Development/PalChi/PalChiApp/Data/SessionStorageManager.swift:4:7: note: class 'SessionStorageManager' does not conform to the 'Sendable' protocol
+class SessionStorageManager {
+      ^
+/Users/scottc/Documents/Development/PalChi/PalChiApp/Data/SessionStorageManager.swift:264:17: warning: variable 'sessionData' was never mutated; consider changing to 'let' constant
+            var sessionData = SessionData(sessionId: sessionId, userId: self.userId, data: data)
+            ~~~ ^
+            let
+/Users/scottc/Documents/Development/PalChi/PalChiApp/Data/SessionStorageManager.swift:268:20: warning: value 'idProperty' was defined but never used; consider replacing with boolean test
+            if let idProperty = mirror.children.first(where: { $0.label == "id" }) {
+               ~~~~^~~~~~~~~~~~~
+                                                                                   != nil
+
+SwiftCompile normal x86_64 /Users/scottc/Documents/Development/PalChi/PalChiApp/Data/DeviceManager.swift (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    
+/Users/scottc/Documents/Development/PalChi/PalChiApp/Data/SessionStorageManager.swift:108:30: warning: capture of 'self' with non-sendable type 'SessionStorageManager' in a '@Sendable' closure
+                let result = self.getUnsyncedSessions()
+                             ^
+/Users/scottc/Documents/Development/PalChi/PalChiApp/Data/SessionStorageManager.swift:4:7: note: class 'SessionStorageManager' does not conform to the 'Sendable' protocol
+class SessionStorageManager {
+      ^
+/Users/scottc/Documents/Development/PalChi/PalChiApp/Data/SessionStorageManager.swift:138:31: warning: capture of 'self' with non-sendable type 'SessionStorageManager' in a '@Sendable' closure
+                let success = self.markSessionAsSynced(sessionId)
+                              ^
+/Users/scottc/Documents/Development/PalChi/PalChiApp/Data/SessionStorageManager.swift:4:7: note: class 'SessionStorageManager' does not conform to the 'Sendable' protocol
+class SessionStorageManager {
+      ^
+/Users/scottc/Documents/Development/PalChi/PalChiApp/Data/SessionStorageManager.swift:264:17: warning: variable 'sessionData' was never mutated; consider changing to 'let' constant
+            var sessionData = SessionData(sessionId: sessionId, userId: self.userId, data: data)
+            ~~~ ^
+            let
+/Users/scottc/Documents/Development/PalChi/PalChiApp/Data/SessionStorageManager.swift:268:20: warning: value 'idProperty' was defined but never used; consider replacing with boolean test
+            if let idProperty = mirror.children.first(where: { $0.label == "id" }) {
+               ~~~~^~~~~~~~~~~~~
+                                                                                   != nil
+
+SwiftCompile normal x86_64 /Users/scottc/Documents/Development/PalChi/PalChiApp/Data/SessionStorageManager.swift (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    
+/Users/scottc/Documents/Development/PalChi/PalChiApp/Data/SessionStorageManager.swift:108:30: warning: capture of 'self' with non-sendable type 'SessionStorageManager' in a '@Sendable' closure
+                let result = self.getUnsyncedSessions()
+                             ^
+/Users/scottc/Documents/Development/PalChi/PalChiApp/Data/SessionStorageManager.swift:4:7: note: class 'SessionStorageManager' does not conform to the 'Sendable' protocol
+class SessionStorageManager {
+      ^
+/Users/scottc/Documents/Development/PalChi/PalChiApp/Data/SessionStorageManager.swift:138:31: warning: capture of 'self' with non-sendable type 'SessionStorageManager' in a '@Sendable' closure
+                let success = self.markSessionAsSynced(sessionId)
+                              ^
+/Users/scottc/Documents/Development/PalChi/PalChiApp/Data/SessionStorageManager.swift:4:7: note: class 'SessionStorageManager' does not conform to the 'Sendable' protocol
+class SessionStorageManager {
+      ^
+/Users/scottc/Documents/Development/PalChi/PalChiApp/Data/SessionStorageManager.swift:264:17: warning: variable 'sessionData' was never mutated; consider changing to 'let' constant
+            var sessionData = SessionData(sessionId: sessionId, userId: self.userId, data: data)
+            ~~~ ^
+            let
+/Users/scottc/Documents/Development/PalChi/PalChiApp/Data/SessionStorageManager.swift:268:20: warning: value 'idProperty' was defined but never used; consider replacing with boolean test
+            if let idProperty = mirror.children.first(where: { $0.label == "id" }) {
+               ~~~~^~~~~~~~~~~~~
+                                                                                   != nil
+
+LinkAssetCatalog /Users/scottc/Documents/Development/PalChi/PalChiApp/Resources/Assets.xcassets /Users/scottc/Documents/Development/PalChi/PalChiApp/Resources/Colors.xcassets (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    builtin-linkAssetCatalog --thinned /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/assetcatalog_output/thinned --thinned-dependencies /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/assetcatalog_dependencies_thinned --thinned-info-plist-content /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/assetcatalog_generated_info.plist_thinned --unthinned /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/assetcatalog_output/unthinned --unthinned-dependencies /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/assetcatalog_dependencies_unthinned --unthinned-info-plist-content /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/assetcatalog_generated_info.plist_unthinned --output /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app --plist-output /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/assetcatalog_generated_info.plist
+
+SwiftDriverJobDiscovery normal x86_64 Emitting module for PalChiApp (in target 'PalChiApp' from project 'PalChiApp')
+
+SwiftDriver\ Compilation\ Requirements PalChiApp normal x86_64 com.apple.xcode.tools.swift.compiler (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name PalChiApp -Onone -enforce-exclusivity\=checked @/Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk -target x86_64-apple-ios15.0-simulator -g -module-cache-path /Users/scottc/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Index.noindex/DataStore -swift-version 5 -I /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator -F /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator -emit-localized-strings -emit-localized-strings-path /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64 -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/scottc/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator18.5-22F76-d5fc8ad4295d2ef488fb7d0f804ce0c4.sdkstatcache -output-file-map /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/scottc/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp_const_extract_protocols.json -Xcc -iquote -Xcc /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp-generated-files.hmap -Xcc -I/Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp-own-target-headers.hmap -Xcc -I/Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp-all-target-headers.hmap -Xcc -iquote -Xcc /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp-project-headers.hmap -Xcc -I/Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources-normal/x86_64 -Xcc -I/Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources/x86_64 -Xcc -I/Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp-Swift.h -working-directory /Users/scottc/Documents/Development/PalChi -experimental-emit-module-separately -disable-cmo
+
+ProcessInfoPlistFile /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app/Info.plist /Users/scottc/Documents/Development/PalChi/PalChiApp/Info.plist (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    builtin-infoPlistUtility /Users/scottc/Documents/Development/PalChi/PalChiApp/Info.plist -producttype com.apple.product-type.application -genpkginfo /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -additionalcontentfile /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/assetcatalog_generated_info.plist -o /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app/Info.plist
+
+SwiftMergeGeneratedHeaders /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources/PalChiApp-Swift.h /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp-Swift.h (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    builtin-swiftHeaderTool -arch x86_64 /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp-Swift.h -o /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources/PalChiApp-Swift.h
+
+Copy /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.swiftmodule/x86_64-apple-ios-simulator.swiftmodule /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp.swiftmodule (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp.swiftmodule /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.swiftmodule/x86_64-apple-ios-simulator.swiftmodule
+
+Copy /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.swiftmodule/x86_64-apple-ios-simulator.swiftdoc /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp.swiftdoc (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp.swiftdoc /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.swiftmodule/x86_64-apple-ios-simulator.swiftdoc
+
+Copy /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.swiftmodule/x86_64-apple-ios-simulator.abi.json /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp.abi.json (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp.abi.json /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.swiftmodule/x86_64-apple-ios-simulator.abi.json
+
+Copy /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp.swiftsourceinfo (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp.swiftsourceinfo /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo
+
+SwiftCompile normal x86_64 Compiling\ Session+CoreDataClass.swift,\ Session+CoreDataProperties.swift /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources/CoreDataGenerated/PalChiDataModel/Session+CoreDataClass.swift /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources/CoreDataGenerated/PalChiDataModel/Session+CoreDataProperties.swift (in target 'PalChiApp' from project 'PalChiApp')
+
+SwiftCompile normal x86_64 /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources/CoreDataGenerated/PalChiDataModel/Session+CoreDataClass.swift (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    
+
+SwiftCompile normal x86_64 /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources/CoreDataGenerated/PalChiDataModel/Session+CoreDataProperties.swift (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    
+
+SwiftDriverJobDiscovery normal x86_64 Compiling Session+CoreDataClass.swift, Session+CoreDataProperties.swift (in target 'PalChiApp' from project 'PalChiApp')
+
+SwiftDriverJobDiscovery normal x86_64 Compiling SessionData.swift, NetworkManager.swift (in target 'PalChiApp' from project 'PalChiApp')
+
+SwiftDriverJobDiscovery normal x86_64 Compiling SyncLog+CoreDataClass.swift, SyncLog+CoreDataProperties.swift (in target 'PalChiApp' from project 'PalChiApp')
+
+SwiftDriverJobDiscovery normal x86_64 Compiling Location+CoreDataClass.swift, Location+CoreDataProperties.swift (in target 'PalChiApp' from project 'PalChiApp')
+
+SwiftDriverJobDiscovery normal x86_64 Compiling Device+CoreDataClass.swift, Device+CoreDataProperties.swift (in target 'PalChiApp' from project 'PalChiApp')
+
+SwiftDriverJobDiscovery normal x86_64 Compiling CoreDataStack.swift, DeviceManager.swift, SessionStorageManager.swift (in target 'PalChiApp' from project 'PalChiApp')
+
+SwiftDriverJobDiscovery normal x86_64 Compiling AppDelegate.swift, SceneDelegate.swift, ViewController.swift (in target 'PalChiApp' from project 'PalChiApp')
+
+SwiftDriverJobDiscovery normal x86_64 Compiling PalChiDataModel+CoreDataModel.swift, GeneratedAssetSymbols.swift (in target 'PalChiApp' from project 'PalChiApp')
+
+SwiftDriver\ Compilation PalChiApp normal x86_64 com.apple.xcode.tools.swift.compiler (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    builtin-Swift-Compilation -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name PalChiApp -Onone -enforce-exclusivity\=checked @/Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk -target x86_64-apple-ios15.0-simulator -g -module-cache-path /Users/scottc/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Index.noindex/DataStore -swift-version 5 -I /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator -F /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator -emit-localized-strings -emit-localized-strings-path /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64 -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/scottc/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator18.5-22F76-d5fc8ad4295d2ef488fb7d0f804ce0c4.sdkstatcache -output-file-map /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/scottc/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp_const_extract_protocols.json -Xcc -iquote -Xcc /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp-generated-files.hmap -Xcc -I/Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp-own-target-headers.hmap -Xcc -I/Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp-all-target-headers.hmap -Xcc -iquote -Xcc /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp-project-headers.hmap -Xcc -I/Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources-normal/x86_64 -Xcc -I/Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources/x86_64 -Xcc -I/Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp-Swift.h -working-directory /Users/scottc/Documents/Development/PalChi -experimental-emit-module-separately -disable-cmo
+
+Ld /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app/PalChiApp.debug.dylib normal (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target x86_64-apple-ios15.0-simulator -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk -O0 -L/Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -L/Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator -F/Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -F/Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator -filelist /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp.LinkFileList -install_name @rpath/PalChiApp.debug.dylib -Xlinker -rpath -Xlinker @executable_path/Frameworks -dead_strip -Xlinker -object_path_lto -Xlinker /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp_lto.o -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -dependency_info -Xlinker /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp.swiftmodule -Xlinker -alias -Xlinker _main -Xlinker ___debug_main_executable_dylib_entry_point -Xlinker -no_adhoc_codesign -o /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app/PalChiApp.debug.dylib
+
+ConstructStubExecutorLinkFileList /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp-ExecutorLinkFileList-normal-x86_64.txt (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    construct-stub-executor-link-file-list /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app/PalChiApp.debug.dylib /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libPreviewsJITStubExecutor_no_swift_entry_point.a /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libPreviewsJITStubExecutor.a --output /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp-ExecutorLinkFileList-normal-x86_64.txt
+note: Using stub executor library with Swift entry point. (in target 'PalChiApp' from project 'PalChiApp')
+
+Ld /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app/PalChiApp normal (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target x86_64-apple-ios15.0-simulator -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk -O0 -L/Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator -F/Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator -Xlinker -rpath -Xlinker @executable_path -Xlinker -rpath -Xlinker @executable_path/Frameworks -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -e ___debug_blank_executor_main -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_dylib -Xlinker /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp-DebugDylibPath-normal-x86_64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_instlnm -Xlinker /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp-DebugDylibInstallName-normal-x86_64.txt -Xlinker -filelist -Xlinker /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp-ExecutorLinkFileList-normal-x86_64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __entitlements -Xlinker /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp.app-Simulated.xcent -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __ents_der -Xlinker /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp.app-Simulated.xcent.der /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app/PalChiApp.debug.dylib -Xlinker -no_adhoc_codesign -o /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app/PalChiApp
+
+CopySwiftLibs /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    builtin-swiftStdLibTool --copy --verbose --sign - --scan-executable /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app/PalChiApp.debug.dylib --scan-folder /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app/Frameworks --scan-folder /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app/PlugIns --scan-folder /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app/SystemExtensions --scan-folder /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app/Extensions --platform iphonesimulator --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app/Frameworks --strip-bitcode --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+
+ExtractAppIntentsMetadata (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --module-name PalChiApp --sdk-root /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk --xcode-version 16F6 --platform-family iOS --deployment-target 15.0 --bundle-identifier com.palchi.app --output /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app --target-triple x86_64-apple-ios15.0-simulator --binary-file /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app/PalChiApp --dependency-file /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp_dependency_info.dat --stringsdata-file /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp.SwiftFileList --metadata-file-list /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp.DependencyMetadataFileList --static-metadata-file-list /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp.DependencyStaticMetadataFileList --swift-const-vals-list /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/Objects-normal/x86_64/PalChiApp.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --validate-assistant-intents --no-app-shortcuts-localization
+2025-06-21 23:21:27.053 appintentsmetadataprocessor[57235:5722575] Starting appintentsmetadataprocessor export
+2025-06-21 23:21:27.055 appintentsmetadataprocessor[57235:5722575] warning: Metadata extraction skipped. No AppIntents.framework dependency found.
+
+AppIntentsSSUTraining (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsnltrainingprocessor --infoplist-path /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app/Info.plist --temp-dir-path /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/ssu --bundle-id com.palchi.app --product-path /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app --extracted-metadata-path /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app/Metadata.appintents --metadata-file-list /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Intermediates.noindex/PalChiApp.build/Debug-iphonesimulator/PalChiApp.build/PalChiApp.DependencyMetadataFileList --archive-ssu-assets
+2025-06-21 23:21:27.076 appintentsnltrainingprocessor[57236:5722576] Parsing options for appintentsnltrainingprocessor
+2025-06-21 23:21:27.077 appintentsnltrainingprocessor[57236:5722576] No AppShortcuts found - Skipping.
+
+CodeSign /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app/PalChiApp.debug.dylib (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app/PalChiApp.debug.dylib
+
+CodeSign /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app/__preview.dylib (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app/__preview.dylib
+
+CodeSign /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app
+
+RegisterExecutionPolicyException /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    builtin-RegisterExecutionPolicyException /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app
+
+Validate /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    builtin-validationUtility /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app -infoplist-subpath Info.plist
+
+Touch /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app (in target 'PalChiApp' from project 'PalChiApp')
+    cd /Users/scottc/Documents/Development/PalChi
+    /usr/bin/touch -c /Users/scottc/Library/Developer/Xcode/DerivedData/PalChiApp-efpffvgqbvtsuzexrfeskfaerybo/Build/Products/Debug-iphonesimulator/PalChiApp.app
+
+** TEST BUILD SUCCEEDED **
+
