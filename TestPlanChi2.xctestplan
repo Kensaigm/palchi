@@ -18,53 +18,53 @@
         }
       ]
     },
-    "testTimeoutsEnabled" : true,
     "targetForVariableExpansion" : {
       "containerPath" : "container:PalChiApp.xcodeproj",
       "identifier" : "PalChiApp",
       "name" : "PalChiApp"
-    }
+    },
+    "testTimeoutsEnabled" : true
   },
   "testTargets" : [
     {
       "parallelizable" : true,
+      "selectedTests" : [
+        "AdminSheetsBuildIssueTests",
+        "AdminSheetsBuildIssueTests\/testBasicCompilation",
+        "AdminSheetsBuildIssueTests\/testBuildConfiguration",
+        "AdminSheetsBuildIssueTests\/testCoreDataImports",
+        "AdminSheetsBuildIssueTests\/testCoreDataStackAccess",
+        "AdminSheetsBuildIssueTests\/testDeploymentTarget",
+        "AdminSheetsBuildIssueTests\/testFoundationImports",
+        "AdminSheetsBuildIssueTests\/testModelInstantiation",
+        "AdminSheetsBuildIssueTests\/testNetworkManagerAccess",
+        "AdminSheetsBuildIssueTests\/testNetworkingImports",
+        "AdminSheetsBuildIssueTests\/testSchemeConfiguration",
+        "AdminSheetsBuildIssueTests\/testSimulatorCompatibility",
+        "AdminSheetsBuildIssueTests\/testSwiftUIImports",
+        "AdminSheetsBuildIssueTests\/testTargetConfiguration",
+        "AdminSheetsBuildIssueTests\/testViewControllerInstantiation",
+        "AdminSheetsBuildIssueTests\/testXCTestImports",
+        "AdminSheetsTests",
+        "AdminSheetsTests\/testAccessibilitySupport",
+        "AdminSheetsTests\/testAdminSheetDismissal",
+        "AdminSheetsTests\/testAdminSheetPresentation",
+        "AdminSheetsTests\/testAdminViewInitialization",
+        "AdminSheetsTests\/testConnectivityTabComponents",
+        "AdminSheetsTests\/testDataBinding",
+        "AdminSheetsTests\/testDevicesTabComponents",
+        "AdminSheetsTests\/testErrorHandling",
+        "AdminSheetsTests\/testListsTabComponents",
+        "AdminSheetsTests\/testLocationTabComponents",
+        "AdminSheetsTests\/testPerformanceMetrics",
+        "AdminSheetsTests\/testStatisticsTabComponents",
+        "AdminSheetsTests\/testTabSwitching"
+      ],
       "target" : {
         "containerPath" : "container:PalChiApp.xcodeproj",
         "identifier" : "PalChiAppTests",
         "name" : "PalChiAppTests"
-      },
-      "selectedTests" : [
-        "AdminSheetsTests",
-        "AdminSheetsTests/testAdminViewInitialization",
-        "AdminSheetsTests/testStatisticsTabComponents",
-        "AdminSheetsTests/testConnectivityTabComponents",
-        "AdminSheetsTests/testDevicesTabComponents",
-        "AdminSheetsTests/testLocationTabComponents",
-        "AdminSheetsTests/testListsTabComponents",
-        "AdminSheetsTests/testAdminSheetPresentation",
-        "AdminSheetsTests/testAdminSheetDismissal",
-        "AdminSheetsTests/testTabSwitching",
-        "AdminSheetsTests/testDataBinding",
-        "AdminSheetsTests/testErrorHandling",
-        "AdminSheetsTests/testAccessibilitySupport",
-        "AdminSheetsTests/testPerformanceMetrics",
-        "AdminSheetsBuildIssueTests",
-        "AdminSheetsBuildIssueTests/testSwiftUIImports",
-        "AdminSheetsBuildIssueTests/testCoreDataImports",
-        "AdminSheetsBuildIssueTests/testNetworkingImports",
-        "AdminSheetsBuildIssueTests/testFoundationImports",
-        "AdminSheetsBuildIssueTests/testXCTestImports",
-        "AdminSheetsBuildIssueTests/testBasicCompilation",
-        "AdminSheetsBuildIssueTests/testViewControllerInstantiation",
-        "AdminSheetsBuildIssueTests/testModelInstantiation",
-        "AdminSheetsBuildIssueTests/testNetworkManagerAccess",
-        "AdminSheetsBuildIssueTests/testCoreDataStackAccess",
-        "AdminSheetsBuildIssueTests/testBuildConfiguration",
-        "AdminSheetsBuildIssueTests/testTargetConfiguration",
-        "AdminSheetsBuildIssueTests/testSchemeConfiguration",
-        "AdminSheetsBuildIssueTests/testSimulatorCompatibility",
-        "AdminSheetsBuildIssueTests/testDeploymentTarget"
-      ]
+      }
     }
   ],
   "version" : 1
