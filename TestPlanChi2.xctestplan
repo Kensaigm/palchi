@@ -9,10 +9,63 @@
     }
   ],
   "defaultOptions" : {
-    "testTimeoutsEnabled" : true
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:PalChiApp.xcodeproj",
+          "identifier" : "PalChiApp",
+          "name" : "PalChiApp"
+        }
+      ]
+    },
+    "testTimeoutsEnabled" : true,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:PalChiApp.xcodeproj",
+      "identifier" : "PalChiApp",
+      "name" : "PalChiApp"
+    }
   },
   "testTargets" : [
-
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:PalChiApp.xcodeproj",
+        "identifier" : "PalChiAppTests",
+        "name" : "PalChiAppTests"
+      },
+      "selectedTests" : [
+        "AdminSheetsTests",
+        "AdminSheetsTests/testAdminViewInitialization",
+        "AdminSheetsTests/testStatisticsTabComponents",
+        "AdminSheetsTests/testConnectivityTabComponents",
+        "AdminSheetsTests/testDevicesTabComponents",
+        "AdminSheetsTests/testLocationTabComponents",
+        "AdminSheetsTests/testListsTabComponents",
+        "AdminSheetsTests/testAdminSheetPresentation",
+        "AdminSheetsTests/testAdminSheetDismissal",
+        "AdminSheetsTests/testTabSwitching",
+        "AdminSheetsTests/testDataBinding",
+        "AdminSheetsTests/testErrorHandling",
+        "AdminSheetsTests/testAccessibilitySupport",
+        "AdminSheetsTests/testPerformanceMetrics",
+        "AdminSheetsBuildIssueTests",
+        "AdminSheetsBuildIssueTests/testSwiftUIImports",
+        "AdminSheetsBuildIssueTests/testCoreDataImports",
+        "AdminSheetsBuildIssueTests/testNetworkingImports",
+        "AdminSheetsBuildIssueTests/testFoundationImports",
+        "AdminSheetsBuildIssueTests/testXCTestImports",
+        "AdminSheetsBuildIssueTests/testBasicCompilation",
+        "AdminSheetsBuildIssueTests/testViewControllerInstantiation",
+        "AdminSheetsBuildIssueTests/testModelInstantiation",
+        "AdminSheetsBuildIssueTests/testNetworkManagerAccess",
+        "AdminSheetsBuildIssueTests/testCoreDataStackAccess",
+        "AdminSheetsBuildIssueTests/testBuildConfiguration",
+        "AdminSheetsBuildIssueTests/testTargetConfiguration",
+        "AdminSheetsBuildIssueTests/testSchemeConfiguration",
+        "AdminSheetsBuildIssueTests/testSimulatorCompatibility",
+        "AdminSheetsBuildIssueTests/testDeploymentTarget"
+      ]
+    }
   ],
   "version" : 1
 }
