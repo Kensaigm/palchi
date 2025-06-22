@@ -1,5 +1,6 @@
 import Foundation
 import Network
+import Combine
 
 class ConnectivityManager: ObservableObject {
     @Published var isConnected = false

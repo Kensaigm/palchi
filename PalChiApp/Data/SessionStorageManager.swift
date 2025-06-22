@@ -91,7 +91,7 @@ class SessionStorageManager {
         let request: NSFetchRequest<Session> = Session.fetchRequest()
         request.predicate = NSPredicate(format: "synced == NO")
         request.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: true)]
-        
+
         do {
             let sessions = try context.fetch(request)
             return sessions.compactMap { $0.toSessionData() }
@@ -100,13 +100,23 @@ class SessionStorageManager {
             return []
         }
     }
-    
+
+    // Async version for CloudSyncManager compatibility
+    func getUnsyncedSessions() async throws -> [SessionData] {
+        return await withCheckedContinuation { continuation in
+            DispatchQueue.main.async {
+                let result = self.getUnsyncedSessions()
+                continuation.resume(returning: result)
+            }
+        }
+    }
+
     func markSessionAsSynced(_ sessionId: String) -> Bool {
         let context = coreDataStack.context
         let request: NSFetchRequest<Session> = Session.fetchRequest()
         request.predicate = NSPredicate(format: "sessionId == %@", sessionId)
         request.fetchLimit = 1
-        
+
         do {
             let sessions = try context.fetch(request)
             if let session = sessions.first {
@@ -119,6 +129,20 @@ class SessionStorageManager {
             print("Error marking session as synced: \(error)")
         }
         return false
+    }
+
+    // Async version and alias for CloudSyncManager compatibility
+    func markAsSynced(_ sessionId: String) async throws {
+        return await withCheckedContinuation { continuation in
+            DispatchQueue.main.async {
+                let success = self.markSessionAsSynced(sessionId)
+                if success {
+                    continuation.resume()
+                } else {
+                    continuation.resume()
+                }
+            }
+        }
     }
     
     func deleteSession(_ sessionId: String) -> Bool {
