@@ -18,6 +18,10 @@
 		A1000011000000000000001 /* PalChiDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1000012000000000000001 /* PalChiDataModel.xcdatamodeld */; };
 		A1000014000000000000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1000015000000000000001 /* Assets.xcassets */; };
 		A1000016000000000000001 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1000017000000000000001 /* Colors.xcassets */; };
+		8AFC256B63484F46B2402964 /* AdminSheetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA93F1551D64B089CCC0F0A /* AdminSheetsTests.swift */; };
+		85135DC361D44F7E87580167 /* AdminSheetsBuildIssueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B858465B9D64FC080F5C29B /* AdminSheetsBuildIssueTests.swift */; };
+		28448D4F5B30400086D90336 /* AdminSheetsTestConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C76107048D444FC8D709636 /* AdminSheetsTestConfiguration.swift */; };
+		7E071AD16CEF4C36B3AEDB1D /* PalChiAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5B3CAF987041948C640533 /* PalChiAppTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,10 +38,22 @@
 		A1000015000000000000001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1000017000000000000001 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		A1000019000000000000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBA93F1551D64B089CCC0F0A /* AdminSheetsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSheetsTests.swift; sourceTree = "<group>"; };
+		3B858465B9D64FC080F5C29B /* AdminSheetsBuildIssueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSheetsBuildIssueTests.swift; sourceTree = "<group>"; };
+		3C76107048D444FC8D709636 /* AdminSheetsTestConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSheetsTestConfiguration.swift; sourceTree = "<group>"; };
+		5D5B3CAF987041948C640533 /* PalChiAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalChiAppTests.swift; sourceTree = "<group>"; };
+		DC5CACC8B692491C8EA11C39.xctest /* PalChiAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PalChiAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A100001A000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32B6BF45505C49479107BE5E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -51,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				A100001C000000000000001 /* PalChiApp */,
+				DC5CACC8B692491C8EA11C39000000000000002 /* PalChiAppTests */,
 				A100001D000000000000001 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -73,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				A1000018000000000000001 /* PalChiApp.app */,
+				DC5CACC8B692491C8EA11C39.xctest /* PalChiAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,6 +148,17 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		DC5CACC8B692491C8EA11C39000000000000002 /* PalChiAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				EBA93F1551D64B089CCC0F0A /* AdminSheetsTests.swift */,
+				3B858465B9D64FC080F5C29B /* AdminSheetsBuildIssueTests.swift */,
+				3C76107048D444FC8D709636 /* AdminSheetsTestConfiguration.swift */,
+				5D5B3CAF987041948C640533 /* PalChiAppTests.swift */,
+			);
+			path = PalChiAppTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -149,6 +178,22 @@
 			productName = PalChiApp;
 			productReference = A1000018000000000000001 /* PalChiApp.app */;
 			productType = "com.apple.product-type.application";
+		};
+		DC5CACC8B692491C8EA11C39 /* PalChiAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD86E82B508F47DB9C5F363C /* Build configuration list for PBXNativeTarget "PalChiAppTests" */;
+			buildPhases = (
+				B0092575941E4764B925D9E9 /* Sources */,
+				32B6BF45505C49479107BE5E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PalChiAppTests;
+			productName = PalChiAppTests;
+			productReference = DC5CACC8B692491C8EA11C39.xctest /* PalChiAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -209,6 +254,17 @@
 				A100000D000000000000001 /* SessionData.swift in Sources */,
 				A100000F000000000000001 /* NetworkManager.swift in Sources */,
 				A1000011000000000000001 /* PalChiDataModel.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0092575941E4764B925D9E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AFC256B63484F46B2402964 /* AdminSheetsTests.swift in Sources */,
+				85135DC361D44F7E87580167 /* AdminSheetsBuildIssueTests.swift in Sources */,
+				28448D4F5B30400086D90336 /* AdminSheetsTestConfiguration.swift in Sources */,
+				7E071AD16CEF4C36B3AEDB1D /* PalChiAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +446,42 @@
 			};
 			name = Release;
 		};
+		604AFA16509840EB9B042EA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.palchi.PalChiAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PalChiApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PalChiApp";
+			};
+			name = Debug;
+		};
+		BEF6B62C457742E1A4210DC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.palchi.PalChiAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PalChiApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PalChiApp";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -407,6 +499,15 @@
 			buildConfigurations = (
 				A100002A000000000000001 /* Debug */,
 				A100002B000000000000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD86E82B508F47DB9C5F363C /* Build configuration list for PBXNativeTarget "PalChiAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				604AFA16509840EB9B042EA5 /* Debug */,
+				BEF6B62C457742E1A4210DC8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

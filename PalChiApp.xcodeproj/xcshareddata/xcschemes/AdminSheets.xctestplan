@@ -1,0 +1,38 @@
+{
+  "configurations" : [
+    {
+      "id" : "F8A4C4A4-8B5C-4D3E-9F2A-1B3C4D5E6F7A",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:PalChiApp.xcodeproj",
+          "identifier" : "PalChiApp",
+          "name" : "PalChiApp"
+        }
+      ]
+    },
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:PalChiApp.xcodeproj",
+      "identifier" : "PalChiApp",
+      "name" : "PalChiApp"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:PalChiApp.xcodeproj",
+        "identifier" : "PalChiAppTests",
+        "name" : "PalChiAppTests"
+      }
+    }
+  ],
+  "version" : 1
+}
